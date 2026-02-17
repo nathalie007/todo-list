@@ -1,141 +1,98 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
 .main {
-  display: flex;
   min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
   display: flex;
   justify-content: center;
+  padding: 72px 18px 42px;
+}
+
+.shell {
+  width: 100%;
+  max-width: 900px;
+}
+
+.description {
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 34px;
+  border: 1px solid rgba(157, 180, 197, 0.22);
+  border-radius: 24px;
+  background: linear-gradient(
+    165deg,
+    rgba(8, 21, 36, 0.94) 0%,
+    rgba(8, 27, 42, 0.92) 100%
+  );
+  backdrop-filter: blur(8px);
+  box-shadow: 0 35px 80px -58px rgba(0, 0, 0, 0.85);
+}
+
+.kicker {
+  display: inline-flex;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
   gap: 8px;
+  margin-bottom: 14px;
+  padding: 7px 11px;
+  border: 1px solid rgba(104, 241, 255, 0.28);
+  border-radius: 999px;
+  color: #91f2ff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.subtitle {
+  margin-bottom: 18px;
+  color: rgba(221, 236, 246, 0.84);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.stats {
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  border: 1px solid rgba(128, 157, 176, 0.34);
+  border-radius: 10px;
+  color: #c6e4f9;
+  background: rgba(9, 31, 46, 0.64);
+  font-size: 13px;
+  font-weight: 600;
 }
 
-@media (max-width: 600px) {
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.empty {
+  padding: 20px;
+  border: 1px dashed rgba(126, 154, 171, 0.4);
+  border-radius: 14px;
+  color: rgba(191, 213, 226, 0.92);
+  font-size: 15px;
+  text-align: center;
+}
+
+.description h1 {
+  margin-bottom: 12px;
+  font-size: clamp(32px, 5.6vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: #f5fbff;
+}
+
+@media (max-width: 768px) {
   .main {
-    padding: 48px 24px;
+    padding-top: 40px;
   }
 
-  .intro {
-    gap: 16px;
+  .description {
+    padding: 22px 16px;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .description h1 {
+    font-size: clamp(28px, 8vw, 38px);
   }
 }
